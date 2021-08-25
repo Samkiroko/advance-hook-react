@@ -7,11 +7,11 @@ function CourseCard() {
     <Wrapper className="courseCard">
       <AnimationWrapper>
         <Circles />
+        <Illustration
+          src="/images/illustrations/illustration-1.png"
+          alt="illustration"
+        />
       </AnimationWrapper>
-      <Illustration
-        src="/images/illustrations/illustration-1.png"
-        alt="illustration"
-      />
     </Wrapper>
   )
 }

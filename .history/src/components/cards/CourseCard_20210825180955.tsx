@@ -5,9 +5,7 @@ import Circles from "../animation/Circles"
 function CourseCard() {
   return (
     <Wrapper className="courseCard">
-      <AnimationWrapper>
-        <Circles />
-      </AnimationWrapper>
+      <Circles />
       <Illustration
         src="/images/illustrations/illustration-1.png"
         alt="illustration"
@@ -32,7 +30,7 @@ const Wrapper = styled.div`
   align-content: center;
 `
 
-const AnimationWrapper = styled.div`
+const animationWrapper = styled.div`
   position: absolute;
   width: 360px;
   overflow: hidden;
