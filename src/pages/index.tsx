@@ -4,37 +4,44 @@ import FlutterBuild from "../components/builds/FlutterBuild"
 
 import PurchaseButton from "../components/buttons/PurchaseButton"
 import CourseCard from "../components/cards/CourseCard"
+import { useWindowSize } from "react-use"
 
-const IndexPage = () => (
-  <Wrapper>
-    <HeroWrapper>
-      <CourseCard />
-      <TextWrapper>
-        <Logo src="/images/logos/react-logo.svg" alt="logo" />
-        <Title>Build a web app with React Hooks</Title>
-        <Caption>20 sections - 3 hours of videos</Caption>
-        <Description>
-          Learn how we build the new DesignCode website with React Hooks
-        </Description>
-        <AuthorWrapper>
-          <AuthorImage src="/images/avatars/Meng.png" alt="avatar" />
-          <Caption>Taught by Meng To</Caption>
-        </AuthorWrapper>
-        <PurchaseButton />
-        <SmallText>
-          Purchase includes access to 30 courses. Over 80 hours of content,
-          including 12 hours for SwiftUI, for iOS 13 and iOS 14.
-        </SmallText>
-      </TextWrapper>
-    </HeroWrapper>
-    <FlutterBuild />
-  </Wrapper>
-)
-
+const IndexPage = () => {
+  const { width } = useWindowSize()
+  return (
+    <Wrapper>
+      <HeroWrapper>
+        <CourseCard />
+        <TextWrapper>
+          <Logo src="/images/logos/react-logo.svg" alt="logo" />
+          <Title>Build a web app with React Hooks</Title>
+          <Caption>20 sections - 3 hours of videos</Caption>
+          <Description>
+            Learn how we build the new DesignCode website with React Hooks
+          </Description>
+          <AuthorWrapper>
+            <AuthorImage src="/images/avatars/Meng.png" alt="avatar" />
+            <Caption>Taught by Meng To</Caption>
+          </AuthorWrapper>
+          <PurchaseButton />
+          <SmallText>
+            Purchase includes access to 30 courses. Over 80 hours of content,
+            including 12 hours for SwiftUI, for iOS 13 and iOS 14.
+          </SmallText>
+        </TextWrapper>
+      </HeroWrapper>
+      <FlutterWrapper width={width}>
+        {" "}
+        <FlutterBuild />
+      </FlutterWrapper>
+    </Wrapper>
+  )
+}
 export default IndexPage
 
 const Wrapper = styled.div`
   background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  overflow: hidden;
 `
 
 const TextWrapper = styled.div`
@@ -116,4 +123,12 @@ const SmallText = styled.p`
   font-size: 13px;
   line-height: 130%;
   color: rgba(255, 255, 255, 0.7);
+`
+const FlutterWrapper = styled.div`
+  margin: 100px auto;
+
+  @media (max-width: 1440px) {
+    transform-origin: top left;
+    transform: scale(${props => props.width / 1440});
+  }
 `
