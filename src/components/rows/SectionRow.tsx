@@ -2,18 +2,17 @@ import { timeStamp } from "console"
 import React from "react"
 import styled from "styled-components"
 
-const SectionRow = () => {
+const SectionRow = props => {
+  const { index, title, description, duration } = props
   return (
     <Wrapper>
-      <Index>1</Index>
+      <Index>{index}</Index>
       <TextWrapper>
-        <Title>Introduction to visual Design</Title>
+        <Title>{title}</Title>
         <ProgressBar />
-        <Description>
-          Learn the foundation of UI design and start design an app with me
-        </Description>
+        <Description>{description}</Description>
       </TextWrapper>
-      <Timestamp>12min</Timestamp>
+      <Timestamp>{duration}</Timestamp>
     </Wrapper>
   )
 }
