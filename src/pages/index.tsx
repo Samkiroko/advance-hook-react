@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+import FlutterBuild from "../components/builds/FlutterBuild"
 
 import PurchaseButton from "../components/buttons/PurchaseButton"
 import CourseCard from "../components/cards/CourseCard"
@@ -26,6 +27,7 @@ const IndexPage = () => (
         </SmallText>
       </TextWrapper>
     </HeroWrapper>
+    <FlutterBuild />
   </Wrapper>
 )
 
