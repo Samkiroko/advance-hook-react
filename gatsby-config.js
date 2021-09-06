@@ -14,6 +14,10 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {},
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACEID,

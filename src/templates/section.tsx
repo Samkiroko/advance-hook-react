@@ -3,10 +3,12 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import SectionContent from "../components/sections/SectionContent"
 
 function Section(props) {
   const { data } = props
   const sectionData = data.contentfulSection
+  const markdown = sectionData.content.childMarkdownRemark
 
   return (
     <Layout>
@@ -20,6 +22,7 @@ function Section(props) {
           <Description>{sectionData.description}</Description>
         </HeroWrapper>
       </Wrapper>
+      <SectionContent {...markdown} />
     </Layout>
   )
 }
@@ -36,6 +39,11 @@ export const sectionQuery = graphql`
       illustration {
         fixed {
           src
+        }
+      }
+      content {
+        childMarkdownRemark {
+          htmlAst
         }
       }
     }
