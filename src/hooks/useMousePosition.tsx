@@ -1,13 +1,13 @@
-import React, { useMemo, useState } from "react"
+import React, { useState, useMemo } from "react"
 
-const useMousePosition = (
+function useMousePosition(
   ref
 ): [
   number,
   number,
   { onMouseMove: (event: React.MouseEvent) => void },
   { onMouseLeave: (event: React.MouseEvent) => void }
-] => {
+] {
   const [centerX, setCenterX] = useState(0)
   const [centerY, setCenterY] = useState(0)
 

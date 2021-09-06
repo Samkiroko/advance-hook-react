@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import styled, { keyframes } from "styled-components"
-import useMousePosition from "../../hooks/UseMousePosition"
+
+import useMousePosition from "../../hooks/useMousePosition"
 
 function FlutterBuild() {
   const ref = useRef(null)
@@ -11,8 +12,8 @@ function FlutterBuild() {
       <div
         style={{
           transform: `
-        rotateX(${centerX / 20}deg)
-        rotateY(${centerY / 20}deg)
+          rotateX(${centerY / 20}deg)
+          rotateY(${centerX / 20}deg)
           `,
         }}
       >
@@ -20,8 +21,9 @@ function FlutterBuild() {
           className="shapes"
           style={{
             transform: `
-            translateX(${centerX / 2.5}px)
-            translateY(${centerY / 2.5}px)`,
+          translateX(${centerX / 2.5}px)
+          translateY(${centerY / 2.5}px)
+            `,
           }}
         >
           <div className="shape" />
@@ -37,8 +39,9 @@ function FlutterBuild() {
           src="/images/components/flutter/man.svg"
           style={{
             transform: `
-            translateX(${centerX / 2}px)
-            translateY(${centerY / 2}px)`,
+          translateX(${centerX / 2}px)
+          translateY(${centerY / 2}px)
+            `,
           }}
         />
         <img
@@ -46,8 +49,9 @@ function FlutterBuild() {
           src="/images/components/flutter/iphone.png"
           style={{
             transform: `
-            translateX(${centerX / 2.5}px)
-            translateY(${centerY / 2.5}px)`,
+          translateX(${centerX / 2.5}px)
+          translateY(${centerY / 2.5}px)
+            `,
           }}
         />
         <img
@@ -55,32 +59,36 @@ function FlutterBuild() {
           src="/images/components/flutter/pixel4.png"
           style={{
             transform: `
-            translateX(${centerX / 3}px)
-            translateY(${centerY / 3}px)`,
+          translateX(${centerX / 3}px)
+          translateY(${centerY / 3}px)
+            `,
           }}
         />
         <div
           className="circle1"
           style={{
             transform: `
-            translateX(${centerX / 2}px) 
-            translateY(${centerY / 2}px)`,
+          translateX(${centerX / 2}px)
+          translateY(${centerY / 2}px)
+            `,
           }}
         />
         <div
           className="circle2"
           style={{
             transform: `
-            translateX(${centerX / 3}px) 
-            translateY(${centerY / 3}px)`,
+          translateX(${centerX / 3}px)
+          translateY(${centerY / 3}px)
+            `,
           }}
         />
         <div
           className="circle3"
           style={{
             transform: `
-            translateX(${centerX / 5}px) 
-            translateY(${centerY / 5}px)`,
+          translateX(${centerX / 5}px)
+          translateY(${centerY / 5}px)
+            `,
           }}
         />
 
@@ -88,24 +96,27 @@ function FlutterBuild() {
           className="circle4"
           style={{
             transform: `
-            translateX(${centerX / 6}px) 
-            translateY(${centerY / 6}px)`,
+          translateX(${centerX / 6}px)
+          translateY(${centerY / 6}px)
+            `,
           }}
         />
         <div
           className="circle5"
           style={{
             transform: `
-            translateX(${centerX / 3}px) 
-            translateY(${centerY / 3}px)`,
+          translateX(${centerX / 3}px)
+          translateY(${centerY / 3}px)
+            `,
           }}
         />
         <div
           className="circle6"
           style={{
             transform: `
-            translateX(${centerX / 8}px) 
-            translateY(${centerY / 8}px)`,
+          translateX(${centerX / 8}px)
+          translateY(${centerY / 8}px)
+            `,
           }}
         />
 
@@ -114,8 +125,9 @@ function FlutterBuild() {
           src="/images/components/flutter/background3.svg"
           style={{
             transform: `
-            translateX(${centerX / 5}px) 
-            translateY(${centerY / 5}px)`,
+          translateX(${centerX / 5}px)
+          translateY(${centerY / 5}px)
+            `,
           }}
         />
         <img
@@ -123,8 +135,9 @@ function FlutterBuild() {
           src="/images/components/flutter/background2.svg"
           style={{
             transform: `
-            translateX(${centerX / 6}px) 
-            translateY(${centerY / 6}px)`,
+          translateX(${centerX / 6}px)
+          translateY(${centerY / 6}px)
+            `,
           }}
         />
         <img
@@ -132,8 +145,9 @@ function FlutterBuild() {
           src="/images/components/flutter/background1.svg"
           style={{
             transform: `
-            translateX(${centerX / 7}px) 
-            translateY(${centerY / 7}px)`,
+          translateX(${centerX / 7}px)
+          translateY(${centerY / 7}px)
+            `,
           }}
         />
       </div>

@@ -1,9 +1,9 @@
-import { timeStamp } from "console"
 import React from "react"
 import styled from "styled-components"
 
-const SectionRow = props => {
-  const { index, title, description, duration } = props
+function SectionRow(props) {
+  const { index, title, description, timestamp } = props
+
   return (
     <Wrapper>
       <Index>{index}</Index>
@@ -12,7 +12,7 @@ const SectionRow = props => {
         <ProgressBar />
         <Description>{description}</Description>
       </TextWrapper>
-      <Timestamp>{duration}</Timestamp>
+      <Timestamp>{timestamp}</Timestamp>
     </Wrapper>
   )
 }
@@ -22,10 +22,10 @@ export default SectionRow
 const Wrapper = styled.div`
   position: relative;
   display: grid;
-  max-width: 370px;
-  padding: 10px;
   grid-template-columns: 36px auto;
   gap: 10px;
+  max-width: 370px;
+  padding: 10px;
   background-blend-mode: overlay;
   mix-blend-mode: normal;
   border-radius: 10px;
@@ -40,6 +40,7 @@ const Wrapper = styled.div`
     box-shadow: inset 0px 0px 0px 0.5px rgba(68, 66, 178, 0.2);
   }
 `
+
 const Index = styled.div`
   display: grid;
   width: 36px;
@@ -54,11 +55,13 @@ const Index = styled.div`
   line-height: 24px;
   color: #000000;
 `
+
 const TextWrapper = styled.div`
   display: grid;
   gap: 8px;
-  text-align: left;
+  text-align: start;
 `
+
 const Title = styled.p`
   max-width: 180px;
   font-style: normal;
@@ -67,13 +70,15 @@ const Title = styled.p`
   line-height: 18px;
   color: #3913b8;
 `
-const ProgressBar = styled.p`
+
+const ProgressBar = styled.div`
   width: 170px;
   height: 5px;
   background: rgba(68, 66, 179, 0.1);
   background-blend-mode: overlay;
   border-radius: 8px;
 `
+
 const Description = styled.p`
   font-style: normal;
   font-weight: normal;
@@ -81,6 +86,7 @@ const Description = styled.p`
   line-height: 16px;
   color: #192150;
 `
+
 const Timestamp = styled.div`
   position: absolute;
   display: grid;
@@ -88,8 +94,8 @@ const Timestamp = styled.div`
   right: 10px;
   height: 20px;
   padding: 2px 6px;
-  background-blend-mode: overlay;
   background: rgba(68, 66, 179, 0.1);
+  background-blend-mode: overlay;
   border-radius: 5px;
   place-items: center;
 

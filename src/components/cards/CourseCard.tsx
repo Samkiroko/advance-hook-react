@@ -1,17 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import Circles from "../animation/Circles"
 
-function CourseCard() {
+import Circles from "../animations/Circles"
+
+function CourseCard(props) {
+  const { illustration } = props
   return (
     <Wrapper className="courseCard">
       <AnimationWrapper>
         <Circles />
       </AnimationWrapper>
-      <Illustration
-        src="/images/illustrations/illustration-1.png"
-        alt="illustration"
-      />
+      <Illustration src={illustration} alt="illustration" />
     </Wrapper>
   )
 }
@@ -21,6 +20,8 @@ export default CourseCard
 const Wrapper = styled.div`
   position: relative;
   display: grid;
+  justify-content: center;
+  align-content: center;
   max-width: 360px;
   width: 100%;
   height: 480px;
@@ -28,8 +29,6 @@ const Wrapper = styled.div`
   border-radius: 20px;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25),
     inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.25);
-  justify-content: center;
-  align-content: center;
 `
 
 const AnimationWrapper = styled.div`

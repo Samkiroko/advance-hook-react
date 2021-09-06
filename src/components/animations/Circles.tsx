@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 
-const Circles = () => {
+function Circles() {
   const [animation, setAnimation] = useState(false)
+
   return (
     <Wrapper onClick={() => setAnimation(true)}>
       <Circle animation={animation} />
       <Circle2 animation={animation} />
-      <Circle3 animation={animation} />
     </Wrapper>
   )
 }
@@ -15,14 +15,15 @@ const Circles = () => {
 export default Circles
 
 const scale = keyframes`
-0% {transform:scale(1)}
-100% {transform:scale(1.2)}
+0% { transform: scale(1)}
+100% { transform: scale(1.2)}
 `
 
 const Wrapper = styled.div`
   width: 420px;
   height: 420px;
 `
+
 const Circle = styled.div`
   position: absolute;
   width: 420px;
@@ -39,17 +40,11 @@ const Circle = styled.div`
   animation: ${scale} 5s 1s linear forwards;
   animation-play-state: ${props => (props.animation ? "running" : "paused")};
 `
+
 const Circle2 = styled(Circle)`
   width: 260px;
   height: 260px;
   border-radius: 135px;
   left: calc(50% - 260px / 2);
   top: calc(50% - 260px / 2);
-`
-const Circle3 = styled(Circle)`
-  width: 160px;
-  height: 160px;
-  border-radius: 135px;
-  left: calc(50% - 160px / 2);
-  top: calc(50% - 160px / 2);
 `
