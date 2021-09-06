@@ -1,13 +1,32 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
-import { renderHtmlAst } from "../../functions/renderHtmlAst"
 
-const SectionContent = props => {
+import { renderHtmlAst } from "../../functions/renderHtmlAst"
+import { UserContext } from "../../context/UserContext"
+
+function SectionContent(props) {
   const { htmlAst } = props
-  return <Wrapper>{renderHtmlAst(htmlAst)}</Wrapper>
+  const { isPro } = useContext(UserContext)
+
+  return (
+    <Wrapper>
+      {isPro ? (
+        renderHtmlAst(htmlAst)
+      ) : (
+        <BlockedWrapper>
+          <h2>
+            The content you are trying to access is only available for
+            subscribing users of DesignCode.
+          </h2>
+        </BlockedWrapper>
+      )}
+    </Wrapper>
+  )
 }
 
 export default SectionContent
+
+const BlockedWrapper = styled.div``
 
 const Wrapper = styled.div`
   font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,

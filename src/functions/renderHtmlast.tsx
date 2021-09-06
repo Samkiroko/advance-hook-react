@@ -4,7 +4,6 @@ import rehypeReact from "rehype-react"
 
 export const renderHtmlAst = (htmlAst: any) =>
   useMemo(() => {
-    // Use rehype-react to convert rehype (hast) to React components
     const processor = unified().use(rehypeReact, {
       createElement,
     })
