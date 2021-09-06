@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 
-import { renderHtmlAst } from "../../functions/renderHtmlAst"
+import { renderHtmlAst } from "../../function/renderHtmlAst"
 import { UserContext } from "../../context/UserContext"
 
 function SectionContent(props) {
